@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShineBright Cleaning Co. — Home Cleaning in Columbus, Ohio</title>
+<meta name="description" content="ShineBright Cleaning Co. is a sample home-cleaning company in Columbus, Ohio. Regular, deep, move-in/out, office and Airbnb cleaning. Background-checked cleaners, supplies included.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBFCF8;
+    --paper:#FFFFFF;
+    --ink:#20362B;
+    --muted:#49614F;
+    --green:#17704C;
+    --green-deep:#0C4F33;
+    --green-soft:#EAF4EE;
+    --green-band:#EFF7F2;
+    --accent:#D98E1B;
+    --accent-deep:#9A6206;
+    --accent-soft:#FBF0DA;
+    --line:#DCE8DF;
+    --radius:18px;
+    --wrap:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:clip}
+  body{
+    font-family:'Nunito Sans',system-ui,sans-serif;
+    background:var(--bg);color:var(--ink);
+    line-height:1.6;font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  h1,h2,h3{font-family:'Nunito',sans-serif;line-height:1.15;color:var(--ink)}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+    outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+  section{padding:72px 0}
+  .section-head{max-width:640px;margin-bottom:36px}
+  .section-head h2{font-size:clamp(28px,3.6vw,38px);font-weight:800;margin-bottom:10px}
+  .section-head p{color:var(--muted);font-size:17.5px}
+
+  /* Buttons — one style everywhere */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    background:var(--green);color:#fff;text-decoration:none;
+    font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;
+    padding:14px 26px;border-radius:999px;border:2px solid var(--green);
+    cursor:pointer;transition:background .15s ease,transform .15s ease;
+  }
+  .btn:hover{background:var(--green-deep);border-color:var(--green-deep)}
+  .btn:active{transform:scale(.98)}
+  .btn svg{width:19px;height:19px;flex:none}
+  .btn.alt{background:transparent;color:var(--green-deep)}
+  .btn.alt:hover{background:var(--green-soft)}
+  .btn.light{background:#fff;border-color:#fff;color:var(--green-deep)}
+  .btn.light:hover{background:var(--green-soft)}
+  .btn.outline-light{background:transparent;border-color:#fff;color:#fff}
+  .btn.outline-light:hover{background:rgba(255,255,255,.14)}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:30;
+    background:rgba(251,252,248,.95);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink)}
+  .brand-mark{
+    width:40px;height:40px;border-radius:50%;flex:none;
+    background:var(--green);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .brand-mark svg{width:21px;height:21px}
+  .brand-name{font-family:'Nunito',sans-serif;font-weight:900;font-size:19.5px;line-height:1.05}
+  .brand-sub{font-size:12.5px;color:var(--muted);font-weight:700}
+  .header-actions{display:flex;align-items:center;gap:16px}
+  .header-phone{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--green-deep);font-weight:800;text-decoration:none;font-size:16px;
+    font-family:'Nunito',sans-serif;
+  }
+  .header-phone svg{width:18px;height:18px}
+  .header-phone:hover{color:var(--green)}
+  .header-actions .btn{padding:11px 20px;font-size:15px}
+
+  /* Hero */
+  .hero{background:var(--green-band);padding:52px 0 60px}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(36px,5vw,56px);font-weight:900;letter-spacing:-.01em}
+  .hero p.lede{margin:16px 0 26px;font-size:18.5px;color:var(--muted);max-width:44ch}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-facts{
+    margin-top:30px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;gap:14px 28px;flex-wrap:wrap;
+    font-size:15px;font-weight:700;color:var(--ink);
+  }
+  .hero-facts span{display:inline-flex;align-items:center;gap:8px}
+  .hero-facts svg{width:18px;height:18px;color:var(--green);flex:none}
+  .hero-photo .frame{
+    border-radius:var(--radius);overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:16px 16px 0 var(--accent-soft);
+  }
+  .hero-photo img{width:100%;height:480px;object-fit:cover;object-position:center 30%}
+
+  /* Services */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .svc{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;display:flex;flex-direction:column;gap:8px;
+  }
+  .svc .icon{
+    width:48px;height:48px;border-radius:14px;background:var(--green-soft);
+    display:flex;align-items:center;justify-content:center;color:var(--green-deep);
+  }
+  .svc .icon svg{width:25px;height:25px}
+  .svc h3{font-size:20px;font-weight:800}
+  .svc p{color:var(--muted);font-size:15.5px;flex:1}
+  .svc .from{font-family:'Nunito',sans-serif;font-weight:800;color:var(--green-deep);font-size:15.5px}
+  .svc .from em{font-style:normal;color:var(--accent-deep)}
+  .svc-photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:230px}
+  .svc-photo img{width:100%;height:100%;object-fit:cover}
+
+  /* How it works */
+  .how{background:var(--green-band)}
+  .how-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .steps{display:flex;flex-direction:column;gap:26px;margin-top:6px}
+  .step{display:flex;gap:18px;align-items:flex-start}
+  .step-num{
+    width:46px;height:46px;border-radius:50%;flex:none;
+    background:var(--green);color:#fff;
+    font-family:'Nunito',sans-serif;font-weight:900;font-size:20px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .step h3{font-size:20px;font-weight:800;margin-bottom:3px}
+  .step p{color:var(--muted);font-size:16px;max-width:46ch}
+  .how-photo .frame{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:-16px 16px 0 var(--green-soft)}
+  .how-photo img{width:100%;height:380px;object-fit:cover}
+
+  /* What we clean — signature */
+  .clean-panel{
+    background:var(--green-deep);border-radius:calc(var(--radius) + 10px);
+    padding:clamp(28px,4.5vw,52px);color:#EAF4EE;
+  }
+  .clean-panel h2{color:#fff;font-size:clamp(28px,3.6vw,38px);font-weight:800;margin-bottom:10px}
+  .clean-panel .intro{color:#C9E2D2;font-size:17.5px;max-width:56ch;margin-bottom:34px}
+  .clean-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:40px;align-items:start}
+  .clean-photo{border-radius:var(--radius);overflow:hidden}
+  .clean-photo img{width:100%;height:100%;min-height:340px;object-fit:cover}
+  .room-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .room{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--radius);padding:22px 20px;
+  }
+  .room h3{color:#fff;font-size:18.5px;font-weight:800;margin-bottom:12px}
+  .room ul{list-style:none}
+  .room li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:15.5px;color:#EAF4EE;padding:4.5px 0;line-height:1.45;
+  }
+  .room li svg{width:17px;height:17px;flex:none;margin-top:3px;color:#8FD3AE}
+  .clean-strip{
+    margin-top:22px;background:var(--accent-soft);color:var(--ink);
+    border-radius:var(--radius);padding:18px 22px;font-size:16px;
+  }
+  .clean-strip strong{font-family:'Nunito',sans-serif}
+
+  /* Photo band */
+  .band{padding:0}
+  .band .frame{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+  .band img{width:100%;height:320px;object-fit:cover;object-position:center 65%;border-radius:var(--radius)}
+
+  /* Prices */
+  .price-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;max-width:760px;
+  }
+  table{width:100%;border-collapse:collapse;font-size:16.5px}
+  th,td{padding:17px 24px;text-align:left}
+  thead th{
+    font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;
+    background:var(--green-soft);color:var(--green-deep);
+    border-bottom:1px solid var(--line);
+  }
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  td.price{font-family:'Nunito',sans-serif;font-weight:800;color:var(--green-deep);white-space:nowrap}
+  td.price em{font-style:normal;color:var(--accent-deep)}
+  .price-note{margin-top:16px;color:var(--muted);font-size:15.5px;max-width:640px}
+
+  /* Service area */
+  .area{background:var(--green-band)}
+  .area p{color:var(--muted);font-size:17.5px;max-width:60ch}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .chip{
+    background:var(--paper);border:1px solid var(--line);border-radius:999px;
+    padding:9px 18px;font-weight:700;font-size:15px;color:var(--green-deep);
+    font-family:'Nunito',sans-serif;
+  }
+  .area .call-line{margin-top:24px;font-size:16.5px;color:var(--ink)}
+  .area .call-line a{color:var(--green-deep);font-weight:800}
+
+  /* FAQ */
+  .faq-list{max-width:760px;display:flex;flex-direction:column;gap:14px}
+  details{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:4px 24px;
+  }
+  summary{
+    font-family:'Nunito',sans-serif;font-weight:800;font-size:17.5px;color:var(--ink);
+    padding:16px 0;cursor:pointer;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary .plus{font-size:24px;color:var(--green);font-weight:700;line-height:1;flex:none}
+  details[open ] summary .plus{transform:rotate(45deg)}
+  details p{color:var(--muted);font-size:16px;padding:0 0 18px;max-width:62ch}
+
+  /* Quote */
+  .quote{background:var(--green-deep);color:#EAF4EE}
+  .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .quote h2{color:#fff;font-size:clamp(28px,3.6vw,38px);font-weight:800;margin-bottom:12px}
+  .quote .intro{color:#C9E2D2;font-size:17.5px;margin-bottom:24px;max-width:46ch}
+  .quote-points{list-style:none;margin-bottom:28px}
+  .quote-points li{display:flex;gap:10px;align-items:flex-start;padding:5px 0;font-size:16px}
+  .quote-points svg{width:19px;height:19px;flex:none;margin-top:3px;color:#8FD3AE}
+  .quote .hours{margin-top:22px;color:#C9E2D2;font-size:15.5px}
+  form{
+    background:var(--paper);border-radius:var(--radius);padding:28px;
+    display:flex;flex-direction:column;gap:14px;color:var(--ink);
+  }
+  form h3{font-size:21px;font-weight:800}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-family:'Nunito',sans-serif;font-weight:800;font-size:14.5px;color:var(--ink)}
+  .field input,.field select,.field textarea{
+    font-family:'Nunito Sans',sans-serif;font-size:16px;color:var(--ink);
+    border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff;width:100%;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);outline:none;box-shadow:0 0 0 3px var(--green-soft)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn{width:100%;margin-top:4px}
+  .form-note{font-size:14px;color:var(--muted);text-align:center}
+  .form-note a{color:var(--green-deep);font-weight:800}
+
+  /* Final CTA */
+  .cta{text-align:center;padding:72px 0}
+  .cta h2{font-size:clamp(30px,4.4vw,44px);font-weight:900;margin-bottom:12px}
+  .cta p{color:var(--muted);font-size:18px;margin-bottom:28px}
+  .cta .hero-actions{justify-content:center}
+
+  /* Footer */
+  footer{background:var(--ink);color:#C9D6CD;padding:56px 0 34px;font-size:15.5px}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;margin-bottom:36px}
+  footer .brand-name{color:#fff}
+  footer .brand-sub{color:#9DB4A6}
+  footer p{max-width:38ch;margin-top:12px}
+  footer h3{color:#fff;font-size:16.5px;font-weight:800;margin-bottom:12px}
+  footer ul{list-style:none}
+  footer li{padding:3.5px 0}
+  footer a{color:#C9D6CD;text-decoration:none}
+  footer a:hover{color:#fff;text-decoration:underline}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.16);padding-top:22px;
+    display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:#9DB4A6;
+  }
+
+  /* Mobile sticky bar */
+  .mobile-bar{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:40;
+    background:rgba(251,252,248,.97);border-top:1px solid var(--line);
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px;
+  }
+  .mobile-bar .btn{flex:1;padding:13px 10px;font-size:15px}
+
+  /* Responsive */
+  @media (max-width:900px){
+    .hero-grid,.how-grid,.clean-grid,.quote-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .hero-photo img{height:340px}
+    .clean-photo img{min-height:0;height:260px}
+    .footer-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    section{padding:54px 0}
+    .hero{padding:36px 0 44px}
+    .header-phone{display:none}
+    .header-actions .btn{padding:10px 16px;font-size:14px}
+    .brand-name{font-size:17.5px}
+    .svc-grid{grid-template-columns:1fr}
+    .room-grid{grid-template-columns:1fr}
+    .field-row{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr}
+    .mobile-bar{display:flex}
+    body{padding-bottom:66px}
+    th,td{padding:14px 16px}
+    .band img{height:220px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important;animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-in">
+    <a class="brand" href="#top" aria-label="ShineBright Cleaning Co. — home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9L12 2zM19 15l.9 2.6L22.5 18.5l-2.6.9L19 22l-.9-2.6-2.6-.9 2.6-.9L19 15zM5 16l.7 2 2 .7-2 .7L5 21.5l-.7-2.1-2-.7 2-.7L5 16z"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">ShineBright Cleaning Co.</span><br>
+        <span class="brand-sub">Columbus, Ohio</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+16145550134">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13 1 .36 1.96.7 2.9a2 2 0 0 1-.45 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.94.34 1.9.57 2.9.7A2 2 0 0 1 22 16.9z"/></svg>
+        (614) 555-0134
+      </a>
+      <a class="btn" href="#quote">Get a Free Quote</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>A cleaner home, without the work.</h1>
+        <p class="lede">Professional home cleaning in Columbus — vetted cleaners, supplies included, easy booking.</p>
+        <div class="hero-actions">
+          <a class="btn" href="tel:+16145550134">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13 1 .36 1.96.7 2.9a2 2 0 0 1-.45 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.94.34 1.9.57 2.9.7A2 2 0 0 1 22 16.9z"/></svg>
+            Call (614) 555-0134
+          </a>
+          <a class="btn alt" href="#quote">Get a Free Quote</a>
+        </div>
+        <div class="hero-facts">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Background-checked team</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>All supplies included</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No contracts — cancel anytime</span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="frame">
+          <img src="images/hero.jpg" alt="Cleaning supplies ready on a bright kitchen counter" width="1200" height="1800">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Cleaning services</h2>
+        <p>One-time or recurring — every visit follows the same room-by-room checklist, and we bring everything with us.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>
+          <h3>Regular Home Cleaning</h3>
+          <p>Weekly, every two weeks, or monthly upkeep for kitchens, bathrooms, bedrooms and living areas.</p>
+          <span class="from">From <em>$99</em></span>
+        </div>
+        <div class="svc">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z"/></svg></span>
+          <h3>Deep Cleaning</h3>
+          <p>The full reset: inside the oven and fridge, baseboards, cabinet fronts and a proper bathroom scrub.</p>
+          <span class="from">From <em>$199</em></span>
+        </div>
+        <div class="svc">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></svg></span>
+          <h3>Move-In / Move-Out</h3>
+          <p>Empty-home cleans that cover inside every cabinet, drawer and appliance — ready for keys to change hands.</p>
+          <span class="from">From <em>$219</em></span>
+        </div>
+        <div class="svc">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M16 9h3a2 2 0 0 1 2 2v10"/><path d="M2 21h20"/><path d="M8 7h2M8 11h2M8 15h2"/></svg></span>
+          <h3>Office Cleaning</h3>
+          <p>Small offices and studios, cleaned on a schedule that fits your workday — evenings and weekends available.</p>
+          <span class="from">Flat quote <em>before we start</em></span>
+        </div>
+        <div class="svc">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3"/><path d="M15.5 7.5l3 3"/></svg></span>
+          <h3>Airbnb Turnover</h3>
+          <p>Same-day turnovers with fresh linens, restocked basics and a photo check sent to you after every clean.</p>
+          <span class="from">Flat quote <em>per turnover</em></span>
+        </div>
+        <div class="svc-photo">
+          <img src="images/cleaner.jpg" alt="A ShineBright cleaner wiping a window until it shines" width="1200" height="800" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="wrap how-grid">
+      <div>
+        <div class="section-head" style="margin-bottom:28px">
+          <h2>How it works</h2>
+          <p>From first call to a clean home in three plain steps.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <div>
+              <h3>Tell us about your home</h3>
+              <p>Call or send the quote form — size of your home, the clean you want, and a day that suits you. Two minutes, no obligation.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <div>
+              <h3>Get your flat price</h3>
+              <p>We confirm one flat price before we start. No hourly meters running, and no surprises added afterwards.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <div>
+              <h3>Come home to clean</h3>
+              <p>Your cleaner arrives with all supplies and equipment, works through the checklist, and messages you when it's done.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="how-photo">
+        <div class="frame">
+          <img src="images/spray.jpg" alt="A gloved hand holding a spray bottle, ready to clean" width="1200" height="800" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE CLEAN (signature) -->
+  <section id="checklist">
+    <div class="wrap">
+      <div class="clean-panel">
+        <h2>What we clean, room by room</h2>
+        <p class="intro">No vague promises — this is the actual checklist your cleaner works through on every regular visit. Deep cleans add the oven, fridge and baseboards on top.</p>
+        <div class="clean-grid">
+          <div class="clean-photo">
+            <img src="images/bathroom.jpg" alt="A spotless bathroom after a ShineBright clean" width="1200" height="800" loading="lazy">
+          </div>
+          <div class="room-grid">
+            <div class="room">
+              <h3>Kitchen</h3>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Counters and backsplash wiped down</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sink scrubbed and shined</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Stovetop and appliance fronts</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Microwave cleaned inside and out</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Floors swept and mopped</li>
+              </ul>
+            </div>
+            <div class="room">
+              <h3>Bathrooms</h3>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Shower, tub and tiles scrubbed</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Toilet cleaned and sanitized</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Mirror and fixtures polished</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Counters, sink and taps</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Floors mopped, edges by hand</li>
+              </ul>
+            </div>
+            <div class="room">
+              <h3>Bedrooms</h3>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Beds made and pillows set</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>All reachable surfaces dusted</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Mirrors and glass cleaned</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Floors vacuumed or mopped</li>
+              </ul>
+            </div>
+            <div class="room">
+              <h3>Living areas</h3>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Shelves, frames and sills dusted</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Glass and mirrors, streak-free</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cushions and throws straightened</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Floors vacuumed and mopped</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Entryway swept and tidied</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="clean-strip">
+          <strong>On every visit:</strong> trash taken out, light switches and door handles wiped, and floors always finished last — so you walk into the full effect.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BAND -->
+  <section class="band" aria-hidden="true">
+    <div class="frame">
+      <img src="images/vacuum.jpg" alt="" width="1200" height="900" loading="lazy">
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section id="prices">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Sample starting prices</h2>
+        <p>Flat prices, confirmed before we start. Final price depends on the size and condition of your home.</p>
+      </div>
+      <div class="price-card">
+        <table>
+          <thead>
+            <tr><th scope="col">Your home</th><th scope="col">Regular clean</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Studio / 1 bedroom</td><td class="price">from <em>$99</em></td></tr>
+            <tr><td>2 bedrooms</td><td class="price">from <em>$129</em></td></tr>
+            <tr><td>3 bedrooms</td><td class="price">from <em>$159</em></td></tr>
+            <tr><td>4+ bedrooms</td><td class="price">Custom quote</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="price-note">Deep cleans start from $199 and move-in / move-out cleans from $219. These are sample starting prices for this demo website — your real price is agreed with you before any work begins.</p>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section class="area" id="area">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:0">
+        <h2>Where we clean</h2>
+        <p>ShineBright is based in Columbus, Ohio, and serves homes across the Columbus metro area.</p>
+      </div>
+      <div class="chips">
+        <span class="chip">Columbus</span>
+        <span class="chip">Dublin</span>
+        <span class="chip">Westerville</span>
+        <span class="chip">Gahanna</span>
+        <span class="chip">Reynoldsburg</span>
+        <span class="chip">Grove City</span>
+        <span class="chip">Hilliard</span>
+        <span class="chip">Upper Arlington</span>
+        <span class="chip">Worthington</span>
+        <span class="chip">Pickerington</span>
+      </div>
+      <p class="call-line">Don't see your neighborhood? <a href="tel:+16145550134">Call (614) 555-0134</a> — we may already clean on your street.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Do you bring your own supplies?<span class="plus" aria-hidden="true">+</span></summary>
+          <p>Yes. Every visit includes all cleaning supplies and equipment, at no extra charge. If you'd rather we use your own products — for allergies, babies or pets — just say so when you book.</p>
+        </details>
+        <details>
+          <summary>Do I need to be home?<span class="plus" aria-hidden="true">+</span></summary>
+          <p>No. Most of our customers are out while we clean. You can leave a key, a garage code or a smart-lock code, and we'll lock up and message you when we're finished.</p>
+        </details>
+        <details>
+          <summary>What's the difference between a regular and a deep clean?<span class="plus" aria-hidden="true">+</span></summary>
+          <p>A regular clean keeps the kitchen, bathrooms, bedrooms and living areas in shape. A deep clean adds the inside of the oven and fridge, baseboards, cabinet fronts and extra bathroom scrubbing. Most homes start with a deep clean, then switch to regular visits.</p>
+        </details>
+        <details>
+          <summary>What if something isn't right?<span class="plus" aria-hidden="true">+</span></summary>
+          <p>Tell us within 24 hours and we'll come back and re-clean that area free of charge. That's our policy on every single visit — it's what we mean by our satisfaction guarantee.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote" id="quote">
+    <div class="wrap quote-grid">
+      <div>
+        <h2>Get your free quote</h2>
+        <p class="intro">Tell us a little about your home and we'll confirm a flat price — no obligation, and no one will chase you afterwards.</p>
+        <ul class="quote-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Flat price confirmed before we start</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Background-checked, uniformed cleaners</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>All supplies and equipment included</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Not happy within 24 hours? We come back free</li>
+        </ul>
+        <a class="btn light" href="tel:+16145550134">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13 1 .36 1.96.7 2.9a2 2 0 0 1-.45 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.94.34 1.9.57 2.9.7A2 2 0 0 1 22 16.9z"/></svg>
+          Call (614) 555-0134
+        </a>
+        <p class="hours">Open Monday to Saturday, 8am–7pm.</p>
+      </div>
+      <form id="quote-form">
+        <h3>Request a quote</h3>
+        <div class="field-row">
+          <div class="field">
+            <label for="q-name">Your name</label>
+            <input id="q-name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="field">
+            <label for="q-phone">Phone</label>
+            <input id="q-phone" name="phone" type="tel" autocomplete="tel" placeholder="(614) 555-0100" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="q-size">Home size</label>
+            <select id="q-size" name="size">
+              <option>Studio / 1 bedroom</option>
+              <option>2 bedrooms</option>
+              <option>3 bedrooms</option>
+              <option>4+ bedrooms</option>
+              <option>Office / Airbnb</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-type">Cleaning type</label>
+            <select id="q-type" name="type">
+              <option>Regular cleaning</option>
+              <option>Deep cleaning</option>
+              <option>Move-in / move-out</option>
+              <option>Office cleaning</option>
+              <option>Airbnb turnover</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="q-date">Preferred day</label>
+          <input id="q-date" name="date" type="date">
+        </div>
+        <div class="field">
+          <label for="q-notes">Anything we should know? <span style="font-weight:600;color:var(--muted)">(optional)</span></label>
+          <textarea id="q-notes" name="notes" rows="3" placeholder="Pets, gate code, areas to focus on…"></textarea>
+        </div>
+        <button class="btn" type="submit">Send my request on WhatsApp</button>
+        <p class="form-note">This opens WhatsApp with your message ready to send — nothing is sent until you tap send. Prefer to talk? <a href="tel:+16145550134">Call us instead</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <h2>Come home to a clean house.</h2>
+      <p>One call or one message — and the cleaning is off your list this week.</p>
+      <div class="hero-actions">
+        <a class="btn" href="tel:+16145550134">Call (614) 555-0134</a>
+        <a class="btn alt" href="#quote">Get a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top" style="color:#fff">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9L12 2zM19 15l.9 2.6L22.5 18.5l-2.6.9L19 22l-.9-2.6-2.6-.9 2.6-.9L19 15zM5 16l.7 2 2 .7-2 .7L5 21.5l-.7-2.1-2-.7 2-.7L5 16z"/></svg>
+          </span>
+          <span>
+            <span class="brand-name">ShineBright Cleaning Co.</span><br>
+            <span class="brand-sub">Columbus, Ohio</span>
+          </span>
+        </a>
+        <p>A neighborhood home-cleaning service for the Columbus metro — regular, deep, move and turnover cleans.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+16145550134">(614) 555-0134</a></li>
+          <li>Columbus, Ohio</li>
+          <li>Mon–Sat, 8am–7pm</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#services">Cleaning services</a></li>
+          <li><a href="#checklist">What we clean</a></li>
+          <li><a href="#prices">Prices</a></li>
+          <li><a href="#quote">Get a free quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ShineBright Cleaning Co. — a sample demo business. Prices shown are sample starting prices.</span>
+      <span>Sample website by @webxpert.ai</span>
+      <span>Photos: Unsplash contributors, used under the Unsplash License.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="btn" href="tel:+16145550134">Call Now</a>
+  <a class="btn alt" href="#quote" style="background:#fff">Free Quote</a>
+</div>
+
+<script>
+  (function () {
+    var form = document.getElementById('quote-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('q-name').value.trim();
+      var phone = document.getElementById('q-phone').value.trim();
+      var size = document.getElementById('q-size').value;
+      var type = document.getElementById('q-type').value;
+      var date = document.getElementById('q-date').value;
+      var notes = document.getElementById('q-notes').value.trim();
+      var lines = [
+        'Hi ShineBright! I would like a free quote.',
+        'Name: ' + name,
+        'Phone: ' + phone,
+        'Home: ' + size,
+        'Cleaning: ' + type
+      ];
+      if (date) lines.push('Preferred day: ' + date);
+      if (notes) lines.push('Notes: ' + notes);
+      var url = 'https://wa.me/16145550134?text=' + encodeURIComponent(lines.join('\n'));
+      window.open(url, '_blank');
+    });
+  })();
+</script>
+
+</body>
+</html>
